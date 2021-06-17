@@ -1,6 +1,6 @@
 /*
 update 2021/6/7
-京东试用：脚本更新地址 https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js
+京东试用：脚本更新地址 https://raw.githubusercontent.com/qaz88q11/MEjd/main/jd_try.js
 脚本兼容: QuantumultX, Node.js
 ⚠️ 非常耗时的脚本！
 每天最多关注300个商店，但用户商店关注上限为500个。
