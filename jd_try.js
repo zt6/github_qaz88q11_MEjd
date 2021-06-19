@@ -1,10 +1,10 @@
 /*
-update 2021/6/7
+update 2021/6/19
 京东试用：脚本更新地址 https://raw.githubusercontent.com/qaz88q11/MEjd/main/jd_try.js
 ==========================Quantumultx=========================
 [task_local]
 # 京东试用
-11 1 * * * https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js, tag=京东试用, img-url=https://raw.githubusercontent.com/ZCY01/img/master/jdtryv1.png, enabled=true
+11 1 * * * https://raw.githubusercontent.com/qaz88q11/MEjd/main/jd_try.js
  */
 const $ = new Env('京东试用')
 
