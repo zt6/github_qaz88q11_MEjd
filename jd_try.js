@@ -17,7 +17,7 @@ const args = {
 	// 是否通知
 	jdNotify: false,
 	// 每次获取商品数量
-	pageSize: 12,
+	pageSize: 15,
 	// 试用商铺类型
 	cidsList: ["家用电器", "手机数码", "电脑办公", "家居家装"],
 	// 试用类型
@@ -27,7 +27,7 @@ const args = {
 	// 商品最低价格
 	minPrice: 150,
 	// 商品提供最多的数量
-	maxSupplyCount: 10,
+	maxSupplyCount: 13,
 	// 商品试用之间的间隔, 单位：毫秒，随机间隔[applyInterval, applyInterval+2000]
 	applyInterval: 5000
 }
