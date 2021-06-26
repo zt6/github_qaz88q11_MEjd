@@ -26,13 +26,14 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-const ACT_ID = 'dz2010100034444201', shareUuid = '28a699ac78d74aa3b31f7103597f8927'
+const ACT_ID = 'dz2010100034444201', shareUuid = '8f1ee38bb76248678c35e7e81b6c68f0'
 let ADD_CART = false
 ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS : ADD_CART) : ($.getdata("ADD_CART") ? $.getdata("ADD_CART") : ADD_CART);
 // 加入购物车开关，与东东小窝共享
 
 let inviteCodes = [
-  
+  '8f1ee38bb76248678c35e7e81b6c68f0@9ab7e0f5ec0a43be821f8dbc02c923b3@ca2de5d2b26944a4844107fb062ff5e5@b2684fa40ab44d66995629aab3292c4d@5558e82af8724ee19c5ff911f8b72194@1a2127ab7b704272b1d9bee3ddd3eb86',
+  '8f1ee38bb76248678c35e7e81b6c68f0@9ab7e0f5ec0a43be821f8dbc02c923b3@ca2de5d2b26944a4844107fb062ff5e5@b2684fa40ab44d66995629aab3292c4d'
 ]
 
 if ($.isNode()) {
