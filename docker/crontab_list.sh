@@ -132,7 +132,7 @@
 # 京东天天加速
 8 */3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 #京东试用
-#19 1,18 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
+19 1,18 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #天天优惠大乐透
 45 8 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 
