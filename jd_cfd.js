@@ -83,7 +83,7 @@ $.appId = 10009;
       }
 
       token = await getJxToken()
-      // console.log(`token：${JSON.stringify(token)}`)
+      console.log(`token：${JSON.stringify(token)}`)
       $.allTask = []
       $.info = {}
       await shareCodesFormat()
