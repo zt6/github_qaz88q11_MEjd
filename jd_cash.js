@@ -4,11 +4,6 @@
 活动入口：京东APP搜索领现金进入
 已支持IOS双京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
-
-自行添加变量设置邀请码 格式如下 默认10个
-export cashinviteCode="eU9YarjmN_l0-GaDzHIVgA"
-export cashinviteCode2="eU9YEIzvIL9XlTmXuAhW"
-export cashinviteCode3="eU9YEIzvIL9XlTmXuAhW"
 ============Quantumultx===============
 [task_local]
 #签到领现金
@@ -28,52 +23,13 @@ const $ = new Env('签到领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
 const randomCount = $.isNode() ? 20 : 5;
-let cashinviteCode = 'eU9Yae_mZvUgoDjdwnNH1g';
-let cashinviteCode2 = 'eU9YBInbOLtGgAmmnwRL';
-let cashinviteCode3 = 'eU9YHZjsBqFAji6njC9a';
-let cashinviteCode4 = '';
-let cashinviteCode5 = '';
-let cashinviteCode6 = '';
-let cashinviteCode7 = '';
-let cashinviteCode8 = '';
-let cashinviteCode9 = '';
-let cashinviteCode10 = '';
-if (process.env.cashinviteCode) {
-  cashinviteCode = process.env.cashinviteCode;
-}
-if (process.env.cashinviteCode2) {
-  cashinviteCode2 = process.env.cashinviteCode2;
-}
-if (process.env.cashinviteCode3) {
-  cashinviteCode3 = process.env.cashinviteCode3;
-}
-if (process.env.cashinviteCode4) {
-  cashinviteCode4 = process.env.cashinviteCode4;
-}
-if (process.env.cashinviteCode5) {
-  cashinviteCode5 = process.env.cashinviteCode5;
-}
-if (process.env.cashinviteCode6) {
-  cashinviteCode6 = process.env.cashinviteCode6;
-}
-if (process.env.cashinviteCode7) {
-  cashinviteCode7 = process.env.cashinviteCode7;
-}
-if (process.env.cashinviteCode8) {
-  cashinviteCode8 = process.env.cashinviteCode8;
-}
-if (process.env.cashinviteCode9) {
-  cashinviteCode9 = process.env.cashinviteCode9;
-}
-if (process.env.cashinviteCode10) {
-  cashinviteCode10 = process.env.cashinviteCode10;
-}
-newShareCodes = [{"inviteCode":`${cashinviteCode}`},{"inviteCode":`${cashinviteCode2}`},{"inviteCode":`${cashinviteCode3}`},{"inviteCode":`${cashinviteCode4}`},{"inviteCode":`${cashinviteCode5}`},{"inviteCode":`${cashinviteCode6}`},{"inviteCode":`${cashinviteCode7}`},{"inviteCode":`${cashinviteCode8}`},{"inviteCode":`${cashinviteCode9}`},{"inviteCode":`${cashinviteCode10}`}] //这里修改你的邀请码
+
+newShareCodes = [{"inviteCode":"IR0_buuwZP8"},{"inviteCode":"eU9Ya721Y_1wom7Uz3IagA"},{"inviteCode":"eU9YauW6Mqhyom-AzHQQ1A"}] //这里修改你的邀请码
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -144,7 +100,7 @@ function ShareInfo() {
             data = JSON.parse(data);
             if( data.code === 0 && data.data.bizCode === 0){
               console.log(`你的inviteCode: ${data.data.result.inviteCode}`)
-              shareDate=data.data.result.shareDate
+              
               console.log(`你的shareDate: ${data.data.result.shareDate}`)
                let helpInfo = {
                 'inviteCode': data.data.result.inviteCode,
@@ -245,9 +201,7 @@ async function helpFriends() {
 }
 function helpFriend(helpInfo) {
   return new Promise((resolve) => {
-      //{...helpInfo,"source":3,"shareDate":"IRs1bey0ZPg"}
-      
-    $.get(taskUrl("cash_mob_assist", {...helpInfo,"source":3,"shareDate":`"${shareDate}"`}), (err, resp, data) => {
+    $.get(taskUrl("cash_mob_assist", {...helpInfo,"source":3,"shareDate":"IRs1bey0ZPg"}), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
