@@ -11,4 +11,6 @@
 0 0 * * *  node /scripts/jx_cfdhb.js >> /scripts/logs/jx_cfdhb.log 2>&1
 # 宠汪汪并发模式兑换
 0 0 * * *  node /scripts/jd_BFreward.js >> /scripts/logs/jd_BFreward.log 2>&1
+# 宠汪汪普通模式兑换
+0 0 * * *  node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
 
