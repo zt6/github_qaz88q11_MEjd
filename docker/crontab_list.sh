@@ -8,6 +8,6 @@
 # 东东超市兑换奖品
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 京喜财富岛提现
-0 0 * * *  node /scripts/jx_cfdtx.js >> /scripts/logs/jx_cfdtx.log 2>&1
+0 0 * * *  node /scripts/jx_cfdhb.js >> /scripts/logs/jx_cfdhb.log 2>&1
 
 
