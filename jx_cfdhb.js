@@ -1,10 +1,12 @@
 /**
  *
- Name:财富岛红包 (修改自https://gayhub.lensu.workers.dev/pxylen/dog_jd/master/jx_cfdtx.js)
+ Name:财富岛兑换红包
+ cron 0 * * * * jx_cfdhb.js
+ 更新时间：2021-8-19 调调
  *
  **/
 
-const $ = new Env("财富岛红包");
+const $ = new Env("财富岛兑换红包");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const JD_API_HOST = "https://m.jingxi.com/";
 $.cookieArr = [];
@@ -40,7 +42,7 @@ function cashOut(ac) {
                         $.logErr(`❌ 账号${ac.no} API请求失败，请检查网络后重试\n data: ${JSON.stringify(err, null, 2)}`);
                     } else {
                         let sErrMsg = $.toObj(data);
-                        console.log(`红包提现结果：${sErrMsg.sErrMsg}`)
+                      	console.log(`红包兑换结果：${data}`)
                     }
                 } catch (e) {
                     $.logErr(`======== 账号 ${ac.no} ========\nerror:${e}\ndata: ${resp && resp.body}`)
@@ -54,7 +56,7 @@ function cashOut(ac) {
 
 function taskUrl(function_path, body, ck) {
     return {
-        url: `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=7155.9.47&dwType=3&dwLvl=10&${body}&_stk=_cfd_t%2CbizCode%2CddwPaperMoney%2CdwEnv%2CdwLvl%2CdwType%2Cptag%2Csource%2CstrPoolName%2CstrZone&_ste=1&h5st=20210714194505287%3B0008312373818162%3B10032%3Btk01wef211d4ea8nVnBKbkI2YWMyLsdfUxEgOgzh%2BGXmysR3jrvoYsR5UiQmQXKDaskgnKcEhmAqe%2BhVC5n3FVHFTTjE%3B30385d4f25fc9cb5170507d9d9648abe6d396d055b3f891d622eb37671cf288c&_=${Date.now()}&sceneval=2&g_login_type=1&g_ty=ls`,
+        url: `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=7155.9.47&dwType=3&dwLvl=36&${body}&_stk=_cfd_t%2CbizCode%2CddwPaperMoney%2CdwEnv%2CdwLvl%2CdwType%2Cptag%2Csource%2CstrPoolName%2CstrZone&_ste=1&h5st=20210819160201515%3B2024000511801161%3B10032%3Btk01wd8801c8330nUzEYWcxfv90nUiz51xjmwifKZ%2FvVwuMBb0YqlZoUJAOVvYX2kKpPk79i2gsD6U7Jav91gemM%2B1nD%3B3990f9f1796c74bb109c1ea063d797287e5ad3799186016350aaa850c1d87eef&_=${Date.now()}&sceneval=2&g_login_type=1&g_ty=ls`,
         headers: {
             Cookie: ck,
             Accept: "*/*",
