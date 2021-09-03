@@ -2,7 +2,7 @@
  *
  Name:财富岛兑换红包
  cron 0 * * * * jx_cfdhb.js
- 更新时间：2021-8-19 调调
+ 更新时间：2021-9-3 调调
  *
  **/
 
@@ -33,7 +33,7 @@ function cashOut(ac) {
         $.get(
             taskUrl(
                 `user/ExchangePrize`,
-                `ddwPaperMoney=100000&&strPoolName=jxcfd2_exchange_hb_2021&strPgtimestamp=undefined&strPhoneID=undefined&strPgUUNum=undefined`,
+                `ddwPaperMoney=100000&&strPoolName=jxcfd2_exchange_hb_202108&strPgtimestamp=undefined&strPhoneID=undefined&strPgUUNum=undefined`,
                 ac
             ),
             async (err, resp, data) => {
@@ -56,7 +56,7 @@ function cashOut(ac) {
 
 function taskUrl(function_path, body, ck) {
     return {
-        url: `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=7155.9.47&dwType=3&dwLvl=36&${body}&_stk=_cfd_t%2CbizCode%2CddwPaperMoney%2CdwEnv%2CdwLvl%2CdwType%2Cptag%2Csource%2CstrPoolName%2CstrZone&_ste=1&h5st=20210819160201515%3B2024000511801161%3B10032%3Btk01wd8801c8330nUzEYWcxfv90nUiz51xjmwifKZ%2FvVwuMBb0YqlZoUJAOVvYX2kKpPk79i2gsD6U7Jav91gemM%2B1nD%3B3990f9f1796c74bb109c1ea063d797287e5ad3799186016350aaa850c1d87eef&_=${Date.now()}&sceneval=2&g_login_type=1&g_ty=ls`,
+        url: `${JD_API_HOST}jxbfd/${function_path}?strZone=jxbfd&bizCode=jxbfd&source=jxbfd&dwEnv=7&_cfd_t=${Date.now()}&ptag=7155.9.47&dwType=3&dwLvl=1&${body}&_stk=_cfd_t%2CbizCode%2CddwPaperMoney%2CdwEnv%2CdwLvl%2CdwType%2Cptag%2Csource%2CstrPoolName%2CstrZone&_ste=1&h5st=20210819160201515%3B2024000511801161%3B10032%3Btk01wd8801c8330nUzEYWcxfv90nUiz51xjmwifKZ%2FvVwuMBb0YqlZoUJAOVvYX2kKpPk79i2gsD6U7Jav91gemM%2B1nD%3B3990f9f1796c74bb109c1ea063d797287e5ad3799186016350aaa850c1d87eef&_=${Date.now()}&sceneval=2&g_login_type=1&g_ty=ls`,
         headers: {
             Cookie: ck,
             Accept: "*/*",
